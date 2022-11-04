@@ -63,7 +63,7 @@ func (e errListenerClosed) Timeout() bool   { return false }
 var ErrListenerClosed = errListenerClosed("mux: listener closed")
 
 // ErrServerClosed is returned from muxListener.Accept when mux server is closed.
-var ErrServerClosed = errors.New("mux: server closed")
+var ErrServerClosed = context.Canceled // var ErrServerClosed = errors.New("mux: server closed")
 
 // for readability of readTimeout
 var noTimeout time.Duration
